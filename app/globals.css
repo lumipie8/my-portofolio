@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Design tokens dari DESIGN.md (Tailwind v4) */
+@theme {
+  --color-bg: #0a0a0c;
+  --color-accent: #6366f1;
+  --color-accent-2: #3b82f6;
+  --color-muted: #9ca3af;
+  --color-soft: #d1d5db;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-soft);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Latar "deep space": bintang halus + glow gradien, tetap di belakang konten */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.55), transparent 100%),
+    radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,.4), transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 65%, rgba(255,255,255,.5), transparent 100%),
+    radial-gradient(1px 1px at 35% 80%, rgba(255,255,255,.35), transparent 100%),
+    radial-gradient(1px 1px at 55% 55%, rgba(255,255,255,.3), transparent 100%),
+    radial-gradient(60rem 40rem at 80% -10%, rgba(99,102,241,.14), transparent 60%),
+    radial-gradient(50rem 35rem at -10% 110%, rgba(59,130,246,.10), transparent 60%);
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .glass-hover:hover {
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Ayunan lanyard (CSS). Diganti otomatis bila nanti pakai physics R3F. */
+@keyframes lanyard-swing {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50%      { transform: rotate(2.5deg); }
+}
+.lanyard-swing {
+  transform-origin: top center;
+  animation: lanyard-swing 5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lanyard-swing { animation: none; }
+}
+
+/* Sembunyikan scrollbar untuk nav mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
