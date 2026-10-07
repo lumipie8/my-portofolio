@@ -3,27 +3,33 @@
 import { useLanguage } from "../context/LanguageContext";
 import { motion } from "framer-motion";
 
-const projects = [
-  {
-    title: "Sistem Pakar Diagnosa Penyakit Tomat",
-    description:
-      "Aplikasi web berbasis sistem pakar untuk mendiagnosa penyakit pada tanaman tomat menggunakan metode Forward Chaining berdasarkan gejala tanaman.",
-    techStack: ["HTML5", "CSS3", "JavaScript"],
-    liveUrl: "https://sistem-pakar-tomat.vercel.app/",
-    githubUrl:
-      "https://github.com/lumipie8/SISTEM-PAKAR-DIAGNOSA-PENYAKIT-TOMAT-MENGGUNAKAN-FORWARD-CHAINING",
-  },
-];
-
 export default function Projects() {
   const { t } = useLanguage();
+
+  // Memindahkan data projects ke dalam komponen agar bisa menggunakan t()
+  const projects = [
+    {
+      title: t(
+        "Expert System for Tomato Disease Diagnosis",
+        "Sistem Pakar Diagnosa Penyakit Tomat",
+      ),
+      description: t(
+        "An expert system web application to diagnose tomato plant diseases using the Forward Chaining method based on plant symptoms.",
+        "Aplikasi web berbasis sistem pakar untuk mendiagnosa penyakit pada tanaman tomat menggunakan metode Forward Chaining berdasarkan gejala tanaman.",
+      ),
+      techStack: ["HTML5", "CSS3", "JavaScript"],
+      liveUrl: "https://sistem-pakar-tomat.vercel.app/",
+      githubUrl:
+        "https://github.com/lumipie8/SISTEM-PAKAR-DIAGNOSA-PENYAKIT-TOMAT-MENGGUNAKAN-FORWARD-CHAINING",
+    },
+  ];
 
   return (
     <section
       id="projects"
       className="relative w-full py-24 bg-[#080810] overflow-hidden border-t border-white/5"
     >
-      {/* 🌌 Ambient Background Konsisten */}
+      {/* 🌌 Ambient Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <div
           className="absolute inset-0 opacity-20"
@@ -86,7 +92,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Action Links (Live Demo & GitHub) */}
+                {/* Action Links */}
                 <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                   {proj.liveUrl && (
                     <a
