@@ -5,19 +5,13 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
-    title: "Attendance Management App",
-    description: "Camera-based attendance detection system with QR code scanning and logs.",
-    tech: ["React", "JavaScript", "HTML/CSS"],
-  },
-  {
-    title: "Tebak Lagu - KawanBelajar",
-    description: "Educational music guessing game with dynamic audio controls and level grids.",
-    tech: ["Next.js", "React", "Tailwind CSS"],
-  },
-  {
-    title: "Interactive Surprise Gift Web",
-    description: "Meme-inspired interactive web page with custom animations and audio transitions.",
-    tech: ["HTML", "CSS Animations", "JavaScript"],
+    title: "Sistem Pakar Diagnosa Penyakit Tomat",
+    description:
+      "Aplikasi web berbasis sistem pakar untuk mendiagnosa penyakit pada tanaman tomat menggunakan metode Forward Chaining berdasarkan gejala tanaman.",
+    techStack: ["HTML5", "CSS3", "JavaScript"],
+    liveUrl: "https://sistem-pakar-tomat.vercel.app/",
+    githubUrl:
+      "https://github.com/lumipie8/SISTEM-PAKAR-DIAGNOSA-PENYAKIT-TOMAT-MENGGUNAKAN-FORWARD-CHAINING",
   },
 ];
 
@@ -25,15 +19,18 @@ export default function Projects() {
   const { t } = useLanguage();
 
   return (
-    <section id="projects" className="relative w-full py-24 bg-[#080810] overflow-hidden border-t border-white/5">
+    <section
+      id="projects"
+      className="relative w-full py-24 bg-[#080810] overflow-hidden border-t border-white/5"
+    >
       {/* 🌌 Ambient Background Konsisten */}
       <div className="absolute inset-0 pointer-events-none z-0">
-        <div 
-          className="absolute inset-0 opacity-20" 
+        <div
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)`,
-            backgroundSize: '36px 36px'
-          }} 
+            backgroundSize: "36px 36px",
+          }}
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-indigo-900/10 rounded-full blur-[140px]" />
       </div>
@@ -52,7 +49,7 @@ export default function Projects() {
           <p className="text-gray-400 text-sm md:text-base">
             {t(
               "Some of the interactive web applications I have crafted recently.",
-              "Beberapa aplikasi web interaktif yang telah saya buat baru-baru ini."
+              "Beberapa aplikasi web interaktif yang telah saya buat baru-baru ini.",
             )}
           </p>
         </motion.div>
@@ -76,15 +73,44 @@ export default function Projects() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-2">
-                {proj.tech.map((tItem, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300"
-                  >
-                    {tItem}
-                  </span>
-                ))}
+              <div>
+                {/* Tech Stack List */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {(proj.techStack || []).map((tItem, tIdx) => (
+                    <span
+                      key={tIdx}
+                      className="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-gray-300"
+                    >
+                      {tItem}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Action Links (Live Demo & GitHub) */}
+                <div className="flex items-center gap-4 pt-4 border-t border-white/10">
+                  {proj.liveUrl && (
+                    <a
+                      href={proj.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-blue-400 hover:text-blue-300 font-medium transition-colors"
+                    >
+                      <span>Live Demo</span>
+                      <span className="text-xs">↗</span>
+                    </a>
+                  )}
+                  {proj.githubUrl && (
+                    <a
+                      href={proj.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-gray-400 hover:text-white font-medium transition-colors"
+                    >
+                      <span>GitHub</span>
+                      <span className="text-xs">↗</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
