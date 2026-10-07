@@ -5,18 +5,32 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
-    company: "BPJS Ketenagakerjaan",
-    role: "Internship / Operational Support",
-    period: "2024",
+    company: "CODEPOLITAN",
+    role: "Frontend Web Development Student",
+    period: "Jul 2026 - Aug 2026",
     description:
-      "Assisted with administrative operations, digital record handling, and data processing support.",
+      "Completed intensive courses on Computer Programming Fundamentals, Basic Algorithms, HTML5, CSS4, Terminal/CMD, and Advanced Git & Version Control.",
   },
   {
-    company: "Inspektorat Kab. Serang",
-    role: "Internship / Administrative Support",
-    period: "2023",
+    company: "SMKN 8 Kota Serang/PT Japfa Comfeed Indonesia Tbk (Assessor)",
+    role: "Vocational Competency Assessment",
+    period: "Mar 2024",
     description:
-      "Managed documentation, filing systems, and supported internal team workflows.",
+      "Certified 'Highly Competent' in Office Administration Assessment. Tested in office software operations, document archiving, correspondence, and basic business communications.",
+  },
+  {
+    company: "BPJS Ketenagakerjaan Serang",
+    role: "Service & Administrative Intern",
+    period: "Feb 2023 - May 2023",
+    description:
+      "Supported customer service operations by assisting participants with forms and daily data logging. Managed internal inventory requests using a digital cashier application, sorted retention archives for document disposal, and performed data entry in Microsoft Excel.",
+  },
+  {
+    company: "Inspektorat Kabupaten Serang",
+    role: "Administrative Intern",
+    period: "Aug 2022 - Nov 2022",
+    description:
+      "Managed incoming mail administration by recording entries on agenda sheets and disposition forms. Distributed copied documents to target departments and maintained structured document archiving in Bantex folders based on chronological and numerical order.",
   },
 ];
 

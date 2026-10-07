@@ -11,7 +11,7 @@ export default function Navbar() {
         
         {/* Logo / Brand Name */}
         <a href="#" className="text-base md:text-lg font-bold text-white tracking-wider hover:text-blue-400 transition-colors shrink-0">
-          Fayza<span className="text-blue-500">.</span>
+          Fay<span className="text-blue-500">.</span>
         </a>
 
         {/* Navigation Links (Scrollable halus di Mobile, normal di Desktop) */}
