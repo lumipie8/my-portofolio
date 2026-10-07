@@ -34,7 +34,9 @@ export default function Contact() {
 
         {/* Email */}
         <a
-          href="mailto:fayzarahma0811@gmail.com"
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=fayzarahma0811@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center gap-2 px-5 py-3 rounded-xl bg-red-600/20 border border-red-500/30 hover:border-red-500 text-red-300 text-sm font-medium transition-colors"
         >
           <SiGmail size={18} /> Email
