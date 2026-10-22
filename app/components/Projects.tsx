@@ -22,6 +22,21 @@ export default function Projects() {
       githubUrl:
         "https://github.com/lumipie8/SISTEM-PAKAR-DIAGNOSA-PENYAKIT-TOMAT-MENGGUNAKAN-FORWARD-CHAINING",
     },
+
+    {
+      title: t(
+        "San Cookies - E-Commerce Web Design",
+        "San Cookies - Desain Web E-Commerce",
+      ),
+      description: t(
+        "UI/UX design for a modern e-commerce cake shop website. Image assets curated from Behance, featuring a warm color scheme from Picular.",
+        "Desain UI/UX web e-commerce toko kue modern. Aset gambar dikurasi dari Behance dengan skema warna hangat dari Picular.",
+      ),
+      techStack: ["Figma", "UI/UX Design", "Prototyping"],
+      liveUrl:
+        "https://www.figma.com/design/8AWfNYHaFwBLpejtBQ5nGF/Cookies-E-Commerce-Web-Design?node-id=0-1&t=l7uQbMs9KETlsrNK-1",
+      linkText: "Figma Prototype",
+    },
   ];
 
   return (
