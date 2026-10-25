@@ -12,19 +12,18 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-1/4 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-blue-600/15 rounded-full blur-[120px]" />
         <div className="absolute top-1/3 right-0 w-[350px] md:w-[600px] h-[350px] md:h-[600px] bg-purple-600/20 rounded-full blur-[140px]" />
-        
-        <div 
-          className="absolute inset-0 opacity-40" 
+
+        <div
+          className="absolute inset-0 opacity-40"
           style={{
             backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0)`,
-            backgroundSize: '32px 32px'
-          }} 
+            backgroundSize: "32px 32px",
+          }}
         />
       </div>
 
       {/* 📐 CONTENT CONTAINER */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-28 md:pt-32 pb-16 md:pb-20 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-        
         {/* Kolom Kiri: Teks & Info (5/12) */}
         <div className="lg:col-span-6 flex flex-col items-start z-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6 hover:border-blue-500/40 transition-all duration-300">
@@ -33,12 +32,18 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
             <span className="text-xs font-medium text-gray-300">
-              {t("Open for collaboration & opportunities", "Terbuka untuk kolaborasi & peluang")}
+              {t(
+                "Open for collaboration & opportunities",
+                "Terbuka untuk kolaborasi & peluang",
+              )}
             </span>
           </div>
 
           <p className="text-blue-400 font-medium text-sm md:text-base mb-3 tracking-wide">
-            {t("Computer Science student · Frontend developer", "Mahasiswa Ilmu Komputer · Frontend Developer")}
+            {t(
+              "Computer Science student · Frontend developer",
+              "Mahasiswa Ilmu Komputer · Frontend Developer",
+            )}
           </p>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
@@ -51,7 +56,7 @@ export default function Hero() {
           <p className="text-gray-400 text-base md:text-lg max-w-xl mb-8 leading-relaxed">
             {t(
               "I'm a Computer Science student who loves building interactive web interfaces and exploring modern tech. Currently learning frontend development step-by-step with HTML, CSS, JavaScript, and React while leveraging AI tools to accelerate my learning.",
-              "Saya adalah mahasiswa Ilmu Komputer yang suka membangun antarmuka web interaktif dan mengeksplorasi teknologi modern. Saat ini sedang mempelajari pengembangan frontend langkah demi langkah dengan HTML, CSS, JavaScript, dan React sambil memanfaatkan alat AI untuk mempercepat proses belajar."
+              "Saya adalah mahasiswa Ilmu Komputer yang suka membangun antarmuka web interaktif dan mengeksplorasi teknologi modern. Saat ini sedang mempelajari pengembangan frontend langkah demi langkah dengan HTML, CSS, JavaScript, dan React sambil memanfaatkan alat AI untuk mempercepat proses belajar.",
             )}
           </p>
 
@@ -72,25 +77,49 @@ export default function Hero() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 w-full max-w-xl">
             <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:bg-white/[0.07] hover:border-blue-500/30 transition-all duration-300 group">
-              <p className="text-xs text-gray-400 group-hover:text-blue-400 transition-colors">{t("Education", "Pendidikan")}</p>
-              <p className="text-sm font-semibold text-white mt-1">Computer Science</p>
+              <p className="text-xs text-gray-400 group-hover:text-blue-400 transition-colors">
+                {t("Education", "Pendidikan")}
+              </p>
+              <p className="text-sm font-semibold text-white mt-1">
+                Computer Science
+              </p>
             </div>
             <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:bg-white/[0.07] hover:border-purple-500/30 transition-all duration-300 group">
-              <p className="text-xs text-gray-400 group-hover:text-purple-400 transition-colors">{t("Focus Area", "Fokus Utama")}</p>
-              <p className="text-sm font-semibold text-white mt-1">Frontend & UI/UX</p>
+              <p className="text-xs text-gray-400 group-hover:text-purple-400 transition-colors">
+                {t("Focus Area", "Fokus Utama")}
+              </p>
+              <p className="text-sm font-semibold text-white mt-1">
+                Frontend & UI/UX
+              </p>
             </div>
             <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md hover:bg-white/[0.07] hover:border-indigo-500/30 transition-all duration-300 group col-span-2 md:col-span-1">
-              <p className="text-xs text-gray-400 group-hover:text-indigo-400 transition-colors">{t("Tech Stack", "Teknologi")}</p>
-              <p className="text-sm font-semibold text-white mt-1">Next.js & React</p>
+              <p className="text-xs text-gray-400 group-hover:text-indigo-400 transition-colors">
+                {t("Tech Stack", "Teknologi")}
+              </p>
+              <p className="text-sm font-semibold text-white mt-1">
+                Next.js & React
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Kolom Kanan: Card 3D Lanyard yang Lebih Besar (6/12) */}
-        <div className="lg:col-span-6 h-[550px] sm:h-[650px] lg:h-[750px] w-full relative z-20 flex justify-center items-center">
+        {/* 3D Lanyard khusus layar laptop/desktop (Hidden di HP) */}
+        <div className="hidden md:flex lg:col-span-6 h-[550px] sm:h-[650px] lg:h-[750px] w-full relative z-20 justify-center items-center">
           <Lanyard3D />
         </div>
 
+        {/* Profil Statis khusus Layar HP (Hidden di Laptop) */}
+        <div className="flex md:hidden flex-col items-center justify-center p-6 text-center">
+          <div className="w-36 h-36 rounded-2xl overflow-hidden border-2 border-white/20 shadow-xl mb-4">
+            <img
+              src="/bg-dark.png"
+              alt="Fayza Siti Rahmawati"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <h3 className="text-xl font-bold text-white">Fayza Siti Rahmawati</h3>
+          <p className="text-sm text-blue-400">Frontend Developer</p>
+        </div>
       </div>
     </section>
   );
